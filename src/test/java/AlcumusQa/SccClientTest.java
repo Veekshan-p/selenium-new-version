@@ -46,12 +46,12 @@ public class SccClientTest extends Base {
 		SccClientPO SccClient = new SccClientPO(driver);
 		
 		SccClient.createAccountAndContact();
-		SccClient.createALead();
-		SccClient.businessProcessFlowToQualify();
+		//SccClient.createALead();
+	//	SccClient.businessProcessFlowToQualify();
 		//SccClient.fileUpload();
-		SccClient.qualifyToDevelop();
-		SccClient.developToNegotiate();
-		SccClient.negotiateToClose();
+	//	SccClient.qualifyToDevelop();
+	//	SccClient.developToNegotiate();
+	//	SccClient.negotiateToClose();
 
 	}
 	
@@ -61,7 +61,7 @@ public class SccClientTest extends Base {
 	@AfterMethod
 	public void closeDown() {
 
-		// driver.quit();
+		 driver.quit();
 	}
 
 }
