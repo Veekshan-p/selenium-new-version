@@ -5,16 +5,11 @@ on:
 
 jobs:
   selenium-test:
-    runs-on: windows-latest  # Change to Windows latest if needed
+    runs-on: windows-latest  # Change to Windows latest
 
     steps:
-      - name: Use Node.js version 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Build with Maven
         run: mvn clean install -DskipTests
