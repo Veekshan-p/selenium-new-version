@@ -1,0 +1,23 @@
+name: Selenium Test
+
+on:
+  workflow_dispatch:  # Manually triggered
+
+jobs:
+  selenium-test:
+    runs-on: windows-latest  # Change to Windows latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Build with Maven
+        run: mvn clean install -DskipTests
+
+      - name: Run Selenium Tests
+        run: mvn test
