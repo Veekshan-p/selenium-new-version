@@ -43,10 +43,10 @@ public class LoginPage {
 		utilities.clickElement(Next);
 	}
 
-	public void clickOnDoNotShowAgain() {
+	public void clickOnDoNotShowAgain() throws InterruptedException {
 
-		utilities.waitForElementToLoad(DoNotShowAgain);
-		DoNotShowAgain.click();
+		utilities.clickElement(DoNotShowAgain);
+		//DoNotShowAgain.click();
 	}
 
 	public void loginUsing(String email, String password) throws InterruptedException {

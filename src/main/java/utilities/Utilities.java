@@ -94,8 +94,8 @@ public class Utilities {
                //  Handle the exception if the element is not found
                System.out.println("Element not found in attempt " + attempt + ": " + e.getMessage());
                 // You can add a delay between retries if needed
-               Thread.sleep(1000); // 1 second delay between retries
-               //element.click();
+               Thread.sleep(3000); // 1 second delay between retries
+               element.click();
             }
         }
 	}
