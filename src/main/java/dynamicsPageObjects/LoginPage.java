@@ -55,6 +55,7 @@ public class LoginPage {
 		clickOnNext();
 		utilities.type(Password, password);
 		clickOnNext();
+		Thread.sleep(2000);
 		clickOnDoNotShowAgain();
 		clickOnNext();
 	}
