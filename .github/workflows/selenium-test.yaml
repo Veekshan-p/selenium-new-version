@@ -20,9 +20,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4 
 
-      - name: Build with Maven
-        run: mvn clean install -DskipTests
-
       - name: Run Selenium Tests
-        run: mvn test -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
+        run: mvn clean install test -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
 
