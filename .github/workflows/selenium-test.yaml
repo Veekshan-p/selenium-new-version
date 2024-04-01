@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
+        type: choice
         description: 'Environment to run the tests on'
         required: true
         default: 'main' # Default environment is dev
