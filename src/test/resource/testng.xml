@@ -4,14 +4,12 @@
 <suite name="Dynamics automation suite">
 
 
-	<parameter name="URL"
-		value="https://alcumusmain.crm4.dynamics.com/main.aspx" />
+	<parameter name="url" value="${url}" />
 
 	<test name="SCC Clinet tests">
 
 		<classes>
 			<class name="AlcumusQa.SccClientTest" />
-
 
 		</classes>
 	</test>
