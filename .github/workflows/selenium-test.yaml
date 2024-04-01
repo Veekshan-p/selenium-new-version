@@ -1,18 +1,27 @@
 name: Selenium Test
 
 on:
-  workflow_dispatch:  # Manually triggered
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run the tests on'
+        required: true
+        default: 'main' # Default environment is dev
+        options: 
+        - main
+        - uat
 
 jobs:
   selenium-test:
-    runs-on: windows-latest  # Change to Windows latest
+    runs-on: windows-latest  # Windows latest env
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 
 
       - name: Build with Maven
         run: mvn clean install -DskipTests
 
       - name: Run Selenium Tests
-        run: mvn test
+        run: mvn test -Durl=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
+
