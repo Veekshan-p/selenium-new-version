@@ -395,6 +395,10 @@ public class SccClientPO {
 	{
 		se.clickElement(Sales);
 		se.clickElement(Accounts);
+		
+		 String currentURL = driver.getCurrentUrl();
+	        System.out.println("Current URL: " + currentURL);
+	        
 //		se.clickElement(New);
 //	//	Thread.sleep(2000);
 //		se.type(accountFiled, "Test account " + currentTime);
