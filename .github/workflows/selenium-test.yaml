@@ -20,12 +20,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4 
 
-      - name: Cache Maven dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2/repository  # Path to Maven dependencies directory
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # Unique key for caching based on OS and pom.xml files
-
       - name: Build with Maven
         run: mvn clean install -DskipTests
 
