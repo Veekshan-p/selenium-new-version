@@ -86,6 +86,7 @@
 					<configuration>
 						<suiteXmlFiles>
 							<suiteXmlFile>src/test/resource/testng.xml</suiteXmlFile>
+							<suiteXmlFile>src/test/resource/safecontractor.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
