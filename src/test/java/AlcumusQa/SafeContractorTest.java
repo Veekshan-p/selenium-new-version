@@ -62,6 +62,12 @@ public class SafeContractorTest extends Base {
 
 	}
 
+	@Test
+	public void testTwo() throws InterruptedException {
+		
+		System.out.println("--------------This message is from second test-------------");
+
+	}
 	@AfterMethod
 	public void closeDown() {
 
