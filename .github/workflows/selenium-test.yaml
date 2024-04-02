@@ -7,7 +7,7 @@ on:
         type: choice
         description: 'Environment to run the tests on'
         required: true
-        default: 'main' # Default environment is dev
+        default: 'main' # Default environment is main
         options: 
         - main
         - uat
@@ -20,8 +20,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4 
 
+      - name: Cache Maven dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository  # Path to Maven dependencies directory
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # Unique key for caching based on OS and pom.xml files
+
       - name: Build with Maven
         run: mvn clean install -DskipTests
 
       - name: Run Selenium Tests
-        run: mvn test -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
+        run: mvn test -Dsurefire.suiteXmlFiles=src/test/resource/safecontractor.xml -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
