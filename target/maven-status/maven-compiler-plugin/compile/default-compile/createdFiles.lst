@@ -1,0 +1,5 @@
+dynamicsPageObjects\SccClientPO.class
+dynamicsPageObjects\SafeContractorPO.class
+utilities\Utilities.class
+dynamicsPageObjects\LoginPage.class
+dynamicsPageObjects\AppsPage.class
