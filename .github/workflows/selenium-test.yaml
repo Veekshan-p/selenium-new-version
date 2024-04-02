@@ -23,8 +23,5 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -DskipTests
 
-      - name: Set URL based on environment
-        run: echo "URL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}" >> $GITHUB_ENV
-
       - name: Run Selenium Tests
-        run: mvn clean test -Dtest=AlcumusQa.SafeContractorTest
+        run: mvn test -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
