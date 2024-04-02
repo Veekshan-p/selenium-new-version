@@ -24,4 +24,4 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: Run Selenium Tests
-        run: mvn test -DargLine="-Dtest=AlcumusQa.SafeContractorTest#safeContractorSalesProcess" -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
+        run: mvn test -Dtest="AlcumusQa.SafeContractorTest#safeContractorSalesProcess" -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
