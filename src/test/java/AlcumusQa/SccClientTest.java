@@ -22,7 +22,6 @@ public class SccClientTest extends Base {
 	String email = prop.getProperty("email");
 	String password = prop.getProperty("password");
 	String browser = prop.getProperty("browser");
-	
 
 	@Parameters("URL")
 	@BeforeMethod
@@ -36,29 +35,28 @@ public class SccClientTest extends Base {
 
 	}
 
-	@Test 
-	public void SccClientSalesProcess() throws InterruptedException 
-	{
+	@Test
+	public void SccClientSalesProcess() throws InterruptedException {
 		AppsPage appspage = new AppsPage(driver);
 
 		appspage.clickOnSCC();
-		
+
 		SccClientPO SccClient = new SccClientPO(driver);
-		
+
 		SccClient.createAccountAndContact();
-		//SccClient.createALead();
-		//SccClient.businessProcessFlowToQualify();
-		//SccClient.fileUpload();
-		//SccClient.qualifyToDevelop();
-		//SccClient.developToNegotiate();
-		//SccClient.negotiateToClose();
+		// SccClient.createALead();
+		// SccClient.businessProcessFlowToQualify();
+		// SccClient.fileUpload();
+		// SccClient.qualifyToDevelop();
+		// SccClient.developToNegotiate();
+		// SccClient.negotiateToClose();
 
 	}
-	
+
 	@AfterMethod
 	public void closeDown() {
 
-		 driver.quit();
+		driver.quit();
 	}
 
 }

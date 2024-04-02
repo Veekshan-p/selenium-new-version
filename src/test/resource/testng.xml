@@ -9,8 +9,16 @@
 	<test name="SCC Clinet tests">
 
 		<classes>
-			<class name="AlcumusQa.SccClientTest" />
-			<class name="AlcumusQa.SafeContractorTest" />
+			<class name="AlcumusQa.SccClientTest">
+				<methods>
+					<include name="SccClientSalesProcess" />
+				</methods>
+			</class>
+			<class name="AlcumusQa.SafeContractorTest">
+				<methods>
+					<include name="safeContractorSalesProcess" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 	<!--Test -->
