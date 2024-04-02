@@ -1,28 +1,29 @@
 package AlcumusQa;
 
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.Base;
 import dynamicsPageObjects.AppsPage;
 import dynamicsPageObjects.LoginPage;
-import dynamicsPageObjects.SccClientPO;
+import dynamicsPageObjects.SafeContractorPO;
 
-public class SccClientTest extends Base {
+public class SafeContractorTest  extends Base {
 
-	public SccClientTest() {
+	public SafeContractorTest() {
 		super();
 	}
 
 	public WebDriver driver;
-
+	
 	String email = prop.getProperty("email");
 	String password = prop.getProperty("password");
 	String browser = prop.getProperty("browser");
-	
 
 	@Parameters("URL")
 	@BeforeMethod
@@ -35,26 +36,35 @@ public class SccClientTest extends Base {
 		loginPage.loginUsing(email, password);
 
 	}
-
+	
+	/*
+	 * work in progress
+	 */
+	
 	@Test 
-	public void SccClientSalesProcess() throws InterruptedException 
+	public void safeContractorSalesProcess() throws InterruptedException 
 	{
 		AppsPage appspage = new AppsPage(driver);
 
 		appspage.clickOnSCC();
 		
-		SccClientPO SccClient = new SccClientPO(driver);
+		SafeContractorPO safeContractorPO = new SafeContractorPO(driver);
 		
-		SccClient.createAccountAndContact();
-		//SccClient.createALead();
-		//SccClient.businessProcessFlowToQualify();
-		//SccClient.fileUpload();
-		//SccClient.qualifyToDevelop();
-		//SccClient.developToNegotiate();
-		//SccClient.negotiateToClose();
+		//safeContractorPO.createAccountAndContact();
+	
+		//safeContractorPO.createCampaignAndAddLeads();
+		
+		//safeContractorPO.QualifyTheLead();
+		
+	//	safeContractorPO.addProduct();
+		
+		safeContractorPO.addDataInExcel();
+		
+		//safeContractorPO.fileUpload();
 
 	}
 	
+
 	@AfterMethod
 	public void closeDown() {
 
