@@ -24,4 +24,4 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: Run Selenium Tests
-        run: mvn test -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }} -Dsurefire.suiteXmlFiles=src/test/resource/safecontractor.xml
+        run: mvn test -Dsurefire.suiteXmlFiles=src/test/resource/safecontractor.xml -DURL=${{ github.event.inputs.environment == 'main' && 'https://alcumusmain.crm4.dynamics.com/main.aspx' || 'https://alcumusuatsafe.crm4.dynamics.com/main.aspx' }}
