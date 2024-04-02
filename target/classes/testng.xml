@@ -9,7 +9,7 @@
 	<test name="SCC Clinet tests">
 
 		<classes>
-			<class name="AlcumusQa.SafeContractorTest" />
+			<class name="AlcumusQa.SccClientTest" />
 			<class name="AlcumusQa.SafeContractorTest" />
 		</classes>
 	</test>
